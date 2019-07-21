@@ -1,0 +1,54 @@
+{% extends 'todo/header.html' %}
+
+{% block title %}
+    {% if user.is_authenticated %}
+        {{ user.username }}
+    {% else %}
+        account page
+    {% endif %}
+{% endblock %}
+
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <br>
+        <h1> Hello {{ user.username }}. these are your tasks below </h1>
+        <hr>
+        {% if tasks|length != 0 %}
+            {% for task in tasks %}
+                <div class="card mx-auto" style="width:50%">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            {% for i in task_type %}
+                                {% if i.id == task.task_type_id %}
+                                    {{ i.task_type }}
+                                {% endif %}
+                            {% endfor %}
+                        </h4>
+                        <hr>
+                        <div class="card-text">
+                            <small>start: {{ task.start_time }}</small><br>
+                            <small>end: {{ task.end_time }}</small><br>
+                            <p>{{ task.task_description }}</p>
+                            <p>status :
+                                {% if task.task_status %}
+                                    done
+                                {% else %}
+                                    due
+                                {% endif %}
+                            </p>
+                            <button class='btn btn-outline-success' type="button">
+                                edit response
+                            </button>
+                        </div>
+                    </div>
+                </div><br>
+            {% endfor %}
+        {% else %}
+            <h2>Welcome. Please assign task to continue</h2>
+        {% endif %}
+    {% else %}
+        <h1> Please login to continue </h1>
+    {% endif %}
+{% endblock content %}
+    

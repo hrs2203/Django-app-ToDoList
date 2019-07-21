@@ -1,0 +1,14 @@
+{% extends 'todo/header.html' %}
+
+{% block title %}
+    homepage
+{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <h1> hello {{ user.username }} </h1>
+        <p><a href="account/">Click to see your home page</a></p>
+    {% else %}
+        <h1> homepage loaded succesfully </h1>
+    {% endif %}
+{% endblock %}

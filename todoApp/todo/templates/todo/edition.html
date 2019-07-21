@@ -1,0 +1,17 @@
+{% extends 'todo/header.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+    task
+{% endblock title %}
+
+{% block content %}
+    <div class='card mx-auto' style="width: 80%; border: 1px solid black; padding: 10px; margin: 10px;">
+        <form method="POST" novalidate>
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    </div>
+{% endblock content %}  

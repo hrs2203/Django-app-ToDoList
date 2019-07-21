@@ -1,0 +1,16 @@
+#editor
+.vscode/
+
+#virtual env
+proj_env/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*$py.class
+
+#database
+db.sqlite3
+
+#others
+toDoList/toDo/__pycache__/
