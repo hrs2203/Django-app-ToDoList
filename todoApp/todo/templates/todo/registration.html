@@ -9,7 +9,7 @@ registration page
 
 {% block content %}
 <br>
-<div class='card mx-auto' style="width: 50%; border: 1px solid black; padding: 10px; margin: 10px;">
+<div class='card mx-auto' style="width: 30%; border: 1px solid black; padding: 10px; margin: 10px;">
     <form method="POST" novalidate>
         {% csrf_token %}
         {{ form|crispy }}
