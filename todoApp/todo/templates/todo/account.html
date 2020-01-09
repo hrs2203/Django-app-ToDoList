@@ -37,12 +37,12 @@
                                     due
                                 {% endif %}
                             </p>
-                            <button class='btn btn-outline-success' type="button">
+                            <a href="/edit_task/?id={{ task.id }}"><button class='btn btn-outline-success' type="button">
                                 edit response
-                            </button>
-                            <button class='btn btn-outline-danger' type="button">
+                            </button></a>
+                            <a href="/delete_task/?id={{ task.id }}"><button class='btn btn-outline-danger' type="button">
                                 delete
-                            </button>
+                            </button></a>
                         </div>
                     </div>
                 </div><br>

@@ -1,11 +1,13 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth import logout, authenticate, login
-from django.http import HttpRequest , HttpResponse , Http404
-from django.contrib.auth.forms import UserCreationForm , AuthenticationForm
 from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth.models import User
-from todo.models import Task , TaskType
-from todo.forms import NewTaskForm , NewTaskTypeForm
+from django.http import Http404, HttpRequest, HttpResponse
+from django.shortcuts import redirect, render
+
+from todo.forms import NewTaskForm, NewTaskTypeForm
+from todo.models import Task, TaskType
+
 
 def homepage(request):
     return render(
@@ -115,7 +117,7 @@ def add_new_task_type(request):
         else:
             messages.error(request , "Something went wrong. please try again")
 
-    form = NewTaskTypeForm
+    form = NewTaskTypeForm()
     return render(
         request = request,
         template_name = 'todo/edition.html',
@@ -123,3 +125,51 @@ def add_new_task_type(request):
             'form' : form,
         }
     )
+
+
+def edit_task(request):
+    id = int(request.GET['id'])
+
+    if request.method == 'POST':
+        form = NewTaskForm(request.POST)
+        # print(form)
+        if form.is_valid():
+            # task = form.save()
+            data = Task.objects.filter(id=id)[0]
+            print(form.cleaned_data)
+            data.user_detail = form.cleaned_data['user_detail']
+            data.task_type = form.cleaned_data['task_type']
+            data.task_description = form.cleaned_data['task_description']
+            data.task_status = form.cleaned_data['task_status']
+            data.start_time = form.cleaned_data['start_time']
+            data.end_time = form.cleaned_data['end_time']
+            data.save()
+            return redirect('/account/')
+            messages.success(request, 'Task edited Succesfully')
+        else:
+            messages.error(request, "Something went wrong. please try again")
+
+    data = Task.objects.filter(id=id)[0]
+    task_data = {
+        'user_detail' : data.user_detail,
+        'task_type' : data.task_type,
+        'task_description': data.task_description,
+        'task_status': data.task_status,
+        'start_time': data.start_time,
+        'end_time': data.end_time
+    }
+    form = NewTaskForm(task_data)
+    return render(
+        request=request,
+        template_name='todo/edition.html',
+        context={
+            'form': form,
+        }
+    )
+
+def delete_task(request):
+    id=int(request.GET['id'])
+    data = Task.objects.filter(id=id)
+    data.delete()
+    messages.success(request, "Deletion successfull")
+    return redirect('/account/')

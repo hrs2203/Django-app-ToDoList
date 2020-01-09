@@ -1,18 +1,22 @@
 <script>
-    $(document).ready(function () {
+    $(document).ready(() => {
         $('.toast').toast('show');
     });
+    setTimeout( () =>{
+        $('.toast').fadeaway('slow');
+    }, 1000 );
 </script>
+
 {% if messages %}
     {% for message in messages %}
         {% if message.tags == 'success'%}
-            <div class='toast float-right' data-autohide="true">
+            <div class='toast fixed-bottom float-right' data-autohide="true">
                 <div class="toast-body">
                     <div class="alert alert-success">{{ message }}</div>
                 </div>
             </div>
         {% elif message.tags == 'error'%}
-            <div class='toast float-right' data-autohide="true">
+            <div class='toast fixed-bottom float-right' data-autohide="true">
                 <div class="toast-body">
                     <div class="alert alert-danger">{{ message }}</div>
                 </div>
