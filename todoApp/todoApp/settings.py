@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'tinymce',
     'todo',
     'crispy_forms',
+    'sendMail'
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

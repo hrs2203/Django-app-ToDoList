@@ -19,7 +19,7 @@ def homepage(request):
 def logout_request(request):
     logout(request)
     messages.success(request , 'logout succesfully')
-    return redirect('/')
+    return redirect('/todo/')
 
 def login_request(request):
 
@@ -32,7 +32,7 @@ def login_request(request):
             if user is not None:
                 login(request, user)
                 messages.success(request , 'login succesfully')
-                return redirect('/account/')
+                return redirect('/todo/account/')
             else:
                 messages.error(request, "Invalid username or password.")
         else:
@@ -58,7 +58,7 @@ def register_request(request):
             User.objects.filter(username = username).update(is_superuser=True , is_staff=True)
             login(request , user)
             messages.success(request , 'login succesfully')
-            return redirect('/')
+            return redirect('/todo/')
         else:
             messages.error(request, "Something went wrong. Invalid username or password.")
             
@@ -93,7 +93,7 @@ def add_new_task(request):
         form = NewTaskForm(request.POST)
         if form.is_valid():
             task = form.save()
-            return redirect('/account/')
+            return redirect('/todo/account/')
             messages.success(request , 'Task added Succesfully')
         else:
             messages.error(request , "Something went wrong. please try again")
@@ -112,7 +112,7 @@ def add_new_task_type(request):
         form = NewTaskTypeForm(request.POST)
         if form.is_valid():
             task = form.save()
-            return redirect('/account/')
+            return redirect('/todo/account/')
             messages.success(request , 'Task Type added Succesfully')
         else:
             messages.error(request , "Something went wrong. please try again")
@@ -136,7 +136,7 @@ def edit_task(request):
         if form.is_valid():
             # task = form.save()
             data = Task.objects.filter(id=id)[0]
-            print(form.cleaned_data)
+            # print(form.cleaned_data)
             data.user_detail = form.cleaned_data['user_detail']
             data.task_type = form.cleaned_data['task_type']
             data.task_description = form.cleaned_data['task_description']
@@ -144,7 +144,7 @@ def edit_task(request):
             data.start_time = form.cleaned_data['start_time']
             data.end_time = form.cleaned_data['end_time']
             data.save()
-            return redirect('/account/')
+            return redirect('/todo/account/')
             messages.success(request, 'Task edited Succesfully')
         else:
             messages.error(request, "Something went wrong. please try again")
@@ -172,4 +172,4 @@ def delete_task(request):
     data = Task.objects.filter(id=id)
     data.delete()
     messages.success(request, "Deletion successfull")
-    return redirect('/account/')
+    return redirect('/todo/account/')

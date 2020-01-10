@@ -37,10 +37,10 @@
                                     due
                                 {% endif %}
                             </p>
-                            <a href="/edit_task/?id={{ task.id }}"><button class='btn btn-outline-success' type="button">
+                            <a href="/todo/edit_task/?id={{ task.id }}"><button class='btn btn-outline-success' type="button">
                                 edit response
                             </button></a>
-                            <a href="/delete_task/?id={{ task.id }}"><button class='btn btn-outline-danger' type="button">
+                            <a href="/todo/delete_task/?id={{ task.id }}"><button class='btn btn-outline-danger' type="button">
                                 delete
                             </button></a>
                         </div>
@@ -49,8 +49,8 @@
             {% endfor %}
         {% else %}
             <h2>Welcome. Please assign task to continue</h2>
-            <a href="/add_task/"><button class='btn btn-outline-success' type="button"> Add new Task </button></a>
-            <a href='/add_task_type/'><button class='btn btn-outline-success' type="button"> Add new Task type </button></a>
+            <a href="/todo/add_task/"><button class='btn btn-outline-success' type="button"> Add new Task </button></a>
+            <a href='/todo/add_task_type/'><button class='btn btn-outline-success' type="button"> Add new Task type </button></a>
         {% endif %}
     {% else %}
         <h1> Please login to continue </h1>

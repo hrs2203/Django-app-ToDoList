@@ -1,18 +1,18 @@
 <ul class="nav nav-pills justify-content-end" >
-    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="/todo/">Home</a></li>
     {% comment %} <li class="nav-item"><a class="nav-link" href="/admin">Admin</a></li> {% endcomment %}
     {% if user.is_authenticated %}
         <li class="nav-item">
             <a class="nav-link dropdown-toggle" href="/#" id="navbardrop" data-toggle="dropdown" >new</a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="/add_task/">task</a>
-                <a class="dropdown-item" href="/add_task_type/">task type</a>
+                <a class="dropdown-item" href="/todo/add_task/">task</a>
+                <a class="dropdown-item" href="/todo/add_task_type/">task type</a>
             </div>
         </li>
-        <li class="nav-item"><a class="nav-link" href="/account">{{user.username}}</a></li>
-        <li class="nav-item"><a class="nav-link" href="/logout">logout</a></li>
+        <li class="nav-item"><a class="nav-link" href="/todo/account">{{user.username}}</a></li>
+        <li class="nav-item"><a class="nav-link" href="/todo/logout">logout</a></li>
     {% else %}
-        <li class="nav-item"><a class="nav-link" href="/login">login</a></li>
-        <li class="nav-item"><a class="nav-link" href="/register">register</a></li>
+        <li class="nav-item"><a class="nav-link" href="/todo/login">login</a></li>
+        <li class="nav-item"><a class="nav-link" href="/todo/register">register</a></li>
     {% endif %}
 </ul>
