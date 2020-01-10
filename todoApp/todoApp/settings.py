@@ -90,7 +90,11 @@ ROOT_URLCONF = 'todoApp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'todo','templates'),
+            os.path.join(BASE_DIR, 'mainApp','templates'),
+            os.path.join(BASE_DIR, 'sendMail','templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
