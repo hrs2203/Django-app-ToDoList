@@ -4,11 +4,42 @@
     Home Page
 {% endblock %}
 
+{% block customStyle %}
+    <style>
+        header {
+            margin-top: 0px;
+            margin-bottom: 10px;
+        }
+
+        .mainframe {
+            margin-right: 20%;
+            margin-left: 20%;
+        }
+    </style>
+{% endblock %}
+
 {% block content %}
-    <h2> Please follow the below link as required</h2>
+    <header class='mainframe'>
+        <ul class="nav nav-pills justify-content-end" >
+            <li class="nav-item"><a class="nav-link" href='/todo'> ToDo list </a></li>
+            <li class="nav-item"><a class="nav-link" href='/sendMail'> Mail App </a></li>
+            <li class="nav-item"><a class="nav-link" href='https://github.com/hrs2203'> Github </a></li>
+            <li class="nav-item"><a class="nav-link" href='https://www.linkedin.com/in/hrishabh-pandey-052a0616b/'> Linkedin </a></li>
+        </ul>
+    </header>
+    <div class='mainframe'>
+        <h1>Hi, I'm Hrishabh</h1>
+        <h3>
+            <p>
+                I am a Computer Science student from Indian Instutite of Information Technology, Sri City, currently woking on my Web developement skills utilizing frameworks like Django, NodeJs and React JS.
+            </p>
+        </h3>
+    </div>
+
+    {% comment %} <h2> Please follow the below link as required</h2>
     <ul> 
-    <li>todo app -> <a href='/todo'> lets go </a></li>
-    <li>mail app -> <a href='/sendMail'> 行こう(lets go) </a></li>
-    </ul> 
+    <li>todo app -> <a class="nav-link" href='/todo'> lets go </a></li>
+    <li>mail app -> <a class="nav-link" href='/sendMail'> 行こう(lets go) </a></li>
+    </ul>  {% endcomment %}
 {% endblock %}
 

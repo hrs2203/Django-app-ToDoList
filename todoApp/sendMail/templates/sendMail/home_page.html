@@ -4,8 +4,31 @@
     Home Page
 {% endblock %}
 
-{% block content %}
-    <h2> App still in progress. please wait... </h2>
-    <h3> ありがとうございました... (thank you)</h3>
+{% block customStyle %}
+    <style>
+        header {
+            margin-top: 0px;
+            margin-bottom: 10px;
+        }
+
+        .mainframe {
+            margin-right: 20%;
+            margin-left: 20%;
+        }
+    </style>
 {% endblock %}
 
+{% block content %}
+    <header class='mainframe'>
+        <ul class="nav nav-pills justify-content-end" >
+            <li class="nav-item"><a class="nav-link" href="/">MainHomePage</a></li>
+            <li class="nav-item"><a class="nav-link" href="/sendMail/">Home Mail</a></li>
+            <li class="nav-item"><a class="nav-link" href='https://github.com/hrs2203'> Github </a></li>
+            <li class="nav-item"><a class="nav-link" href='https://www.linkedin.com/in/hrishabh-pandey-052a0616b/'> Linkedin </a></li>
+        </ul>
+    </header>
+    <div class='mainframe'>
+        <h2> App still in progress. please wait... </h2>
+        <h3> ありがとうございました... (thank you)</h3>
+    </div>
+{% endblock %}
