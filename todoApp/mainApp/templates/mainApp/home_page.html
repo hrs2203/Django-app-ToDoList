@@ -5,41 +5,46 @@
 {% endblock %}
 
 {% block customStyle %}
-    <style>
-        header {
-            margin-top: 0px;
-            margin-bottom: 10px;
-        }
-
-        .mainframe {
-            margin-right: 20%;
-            margin-left: 20%;
-        }
-    </style>
+    {% load static %}
+    <link rel='stylesheet' type='text/css' href="{% static 'css/home_page.css' %}">
 {% endblock %}
 
 {% block content %}
     <header class='mainframe'>
         <ul class="nav nav-pills justify-content-end" >
-            <li class="nav-item"><a class="nav-link" href='/todo'> ToDo list </a></li>
-            <li class="nav-item"><a class="nav-link" href='/sendMail'> Mail App </a></li>
-            <li class="nav-item"><a class="nav-link" href='https://github.com/hrs2203'> Github </a></li>
-            <li class="nav-item"><a class="nav-link" href='https://www.linkedin.com/in/hrishabh-pandey-052a0616b/'> Linkedin </a></li>
+            <li class="nav-item"><a class="nav-link" href='/todo'><button class='btn btn-outline-success'> ToDo list </button> </a></li>
+            <li class="nav-item"><a class="nav-link" href='/sendMail'><button class='btn btn-outline-success'> Mail App </button> </a></li>
+            <li class="nav-item"><a class="nav-link" href='https://github.com/hrs2203'><button class='btn btn-outline-success'> Github </button> </a></li>
+            <li class="nav-item"><a class="nav-link" href='https://www.linkedin.com/in/hrishabh-pandey-052a0616b/'><button class='btn btn-outline-success'> Linkedin </button> </a></li>
         </ul>
     </header>
     <div class='mainframe'>
-        <h1>Hi, I'm Hrishabh</h1>
-        <h3>
-            <p>
-                I am a sophomore Computer Science Undergraduate student from the Indian Institute of Information Technology, Sri City, currently working on my Web development skills utilizing frameworks like Django, NodeJs and React JS.
-            </p>
-        </h3>
-    </div>
+        <section class='site-head mb-5 mt-5'>
+            <div class='row'>
+                <div class="col-lg-6 col-md-12">
+                    <h2 class='mt-5'>Hi,</h2>
+                    <h1>I'm Hrishabh</h1>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    {% load static %}
+                    <img src="{% static 'images/banner-image.png' %}" alt="banner-img" class="img-fluid">
+                </div>
+            </div>
+        </section>
 
-    {% comment %} <h2> Please follow the below link as required</h2>
-    <ul> 
-    <li>todo app -> <a class="nav-link" href='/todo'> lets go </a></li>
-    <li>mail app -> <a class="nav-link" href='/sendMail'> 行こう(lets go) </a></li>
-    </ul>  {% endcomment %}
+        <section class='site-selfIntro mb-5 mt-5'>
+            <div class='row'>
+                <div class="col-lg-6 col-md-12">
+                    {% load static %}
+                    <img src="{% static 'images/about-us.png' %}" alt="banner-img" class="img-fluid">
+                </div>
+                <div class="col-lg-6 col-md-12 text-right">
+                    <h2 class='mt-4'> LET ME INTRODUCE MYSELF </h2>
+                    <p>I am a sophomore Computer Science Undergraduate student from the Indian Institute of Information Technology, Sri City, currently working on my Web development skills utilizing frameworks like Django, NodeJs and React JS.</p>
+                </div>
+            </div>
+        </section>
+        
+    </div>
 {% endblock %}
 

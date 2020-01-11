@@ -1,21 +1,18 @@
 <ul class="nav nav-pills justify-content-end" >
-    <li class="nav-item"><a class="nav-link" href="/">MainHomePage</a></li>
-    <li class="nav-item"><a class="nav-link" href="/todo/">Home Todo</a></li>
-    {% comment %} <li class="nav-item"><a class="nav-link" href="/admin">Admin</a></li> {% endcomment %}
+    <li class="nav-item"><a class="nav-link" href="/"><button class='btn btn-outline-primary'>MainHomePage</button></a></li>
+    <li class="nav-item"><a class="nav-link" href="/todo/"><button class='btn btn-outline-primary'>Home Todo</button></a></li>
+
     {% if user.is_authenticated %}
-        <li class="nav-item">
-            <a class="nav-link dropdown-toggle" href="/#" id="navbardrop" data-toggle="dropdown" >new</a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="/todo/add_task/">task</a>
-                <a class="dropdown-item" href="/todo/add_task_type/">task type</a>
-            </div>
-        </li>
-        <li class="nav-item"><a class="nav-link" href="/todo/account">{{user.username}}</a></li>
-        <li class="nav-item"><a class="nav-link" href="/todo/logout">logout</a></li>
+        <li class="nav-item"><a class="nav-link" href="/todo/add_task/"><button class='btn btn-outline-primary'>task</button></a></li>
+        <li class="nav-item"><a class="nav-link" href="/todo/add_task_type/"><button class='btn btn-outline-primary'>task type</button></a></li>
+        <li class="nav-item"><a class="nav-link" href="/todo/account"><button class='btn btn-outline-primary'>{{user.username}}</button></a></li>
+        <li class="nav-item"><a class="nav-link" href="/todo/logout"><button class='btn btn-outline-primary'>logout</button></a></li>
+
     {% else %}
-        <li class="nav-item"><a class="nav-link" href="/todo/login">login</a></li>
-        <li class="nav-item"><a class="nav-link" href="/todo/register">register</a></li>
+        <li class="nav-item"><a class="nav-link" href="/todo/login"><button class='btn btn-outline-primary'>login</button></a></li>
+        <li class="nav-item"><a class="nav-link" href="/todo/register"><button class='btn btn-outline-primary'>register</button></a></li>
+        <li class="nav-item"><a class="nav-link" href='https://github.com/hrs2203'><button class='btn btn-outline-primary'> Github </button></a></li>
+        <li class="nav-item"><a class="nav-link" href='https://www.linkedin.com/in/hrishabh-pandey-052a0616b/'><button class='btn btn-outline-primary'> Linkedin </button></a></li>
     {% endif %}
-    <li class="nav-item"><a class="nav-link" href='https://github.com/hrs2203'> Github </a></li>
-    <li class="nav-item"><a class="nav-link" href='https://www.linkedin.com/in/hrishabh-pandey-052a0616b/'> Linkedin </a></li>
+
 </ul>

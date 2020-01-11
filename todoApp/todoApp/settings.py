@@ -39,9 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # others
     'tinymce',
-    'todo',
     'crispy_forms',
-    'sendMail'
+    'todo',
+    'sendMail',
+    'mainApp',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -158,3 +159,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'todo', 'static','todo'),
+    os.path.join(BASE_DIR, 'mainApp', 'static','mainApp'),
+    os.path.join(BASE_DIR, 'sendMail', 'static','sendMail'),
+]
