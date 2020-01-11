@@ -159,11 +159,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-# for deploying
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
-# for developement
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static','todo'),
-    os.path.join(BASE_DIR, 'static','mainApp'),
-    os.path.join(BASE_DIR, 'static','sendMail'),
+    os.path.join(BASE_DIR, 'todo', 'static','todo'),
+    os.path.join(BASE_DIR, 'mainApp', 'static','mainApp'),
+    os.path.join(BASE_DIR, 'sendMail', 'static','sendMail'),
 ]
