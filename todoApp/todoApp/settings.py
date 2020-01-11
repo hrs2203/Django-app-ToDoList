@@ -160,7 +160,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'todo', 'static','todo'),
-    os.path.join(BASE_DIR, 'mainApp', 'static','mainApp'),
-    os.path.join(BASE_DIR, 'sendMail', 'static','sendMail'),
+    os.path.join(BASE_DIR, 'static','todo'),
+    os.path.join(BASE_DIR, 'static','mainApp'),
+    os.path.join(BASE_DIR, 'static','sendMail'),
 ]
