@@ -1,7 +1,7 @@
 # Django-app1-ToDoList
 Django Based web Application
 
-Please visit http://www.hrs2203.pythonanywhere.com
+Please visit http://hrs2203.pythonanywhere.com/
 
 or
 
