@@ -5,17 +5,15 @@
 {% endblock %}
 
 {% block content %}
-    <section class='mt-5 mb-3 text-left headIntro'>
-        {% if user.is_authenticated %}
-            <h1> hello {{ user.username }} </h1>
-            <p><a href="/todo/account/">Click to see your home page</a></p>
-        {% else %}
-            <h1> Homepage loaded succesfully </h1>
-            <h2> Please <a href='/todo/login/'>login</a> to continue </h2>
-        {% endif %}
-    </section>
+    {% if user.is_authenticated %}
+        <h1> hello {{ user.username }} </h1>
+        <p><a href="/todo/account/">Click to see your home page</a></p>
+    {% else %}
+        <h1> Homepage loaded succesfully </h1>
+        <h2> Please <a href='/todo/login/'>login</a> to continue </h2>
+    {% endif %}
     <br>
-    <div class='border-top border-bottom border-success p-3 text-justify'>
+    <div class='border-top border-bottom border-success p-3'>
         <h2> About this Page </h2>
         <p>This section of the webSite is a demo project where I create a Django based todo app. This application helped me in the whole learning process while building a product.
         </p>
