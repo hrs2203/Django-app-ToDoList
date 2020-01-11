@@ -1,9 +1,11 @@
 # Django-app1-ToDoList
-first completed django app
-really excited
+Django Based web Application
 
+Please visit http://www.hrs2203.pythonanywhere.com
 
-follow the below commands to get started
+or
+
+Follow the below commands to get to run on local machine after cloning the reposiroty
 
 `python3 -m venv proj_env`
 `source proj_env/bin/activate`
