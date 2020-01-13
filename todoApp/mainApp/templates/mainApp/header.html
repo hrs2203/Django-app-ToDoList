@@ -6,6 +6,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     {% block customStyle %} {% endblock %}
 </head>
 <body style="margin: 10px;" >
@@ -17,4 +18,14 @@
     {% endblock content %}
     
 </body>
+<footer>
+    <div class='container'>
+        <ul class="nav nav-pills justify-content-center">
+            {% comment %} <li class="nav-item"><span> Thank you... Please visit </span> </li> {% endcomment %}
+            <li class="nav-item"><a class="nav-link" href='https://github.com/hrs2203'><span class='fa fa-github'> Github</span></a></li>
+            <li class="nav-item"><a class="nav-link" href='https://www.linkedin.com/in/hrishabh-pandey-052a0616b/'><span class='fa fa-linkedin'> Linkedin</span></a></li>
+        </ul>
+    </div>
+</footer>
+
 </html>
