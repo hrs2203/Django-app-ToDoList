@@ -3,11 +3,16 @@ header {
     margin-bottom: 10px;
 }
 
+
 .mainframe {
     margin-right: 20%;
     margin-left: 20%;
 }
 
-/* .shadow-profile{
+.hov_sha {
+    transition: 0.25s;
+}
 
-} */
+.hov_sha:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
