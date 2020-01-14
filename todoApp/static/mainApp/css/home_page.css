@@ -1,18 +1,3 @@
-header {
-    margin-top: 0px;
-    margin-bottom: 10px;
-}
 
-
-.mainframe {
-    margin-right: 20%;
-    margin-left: 20%;
-}
-
-.hov_sha {
-    transition: 0.25s;
-}
-
-.hov_sha:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+@import url("media1.css") (min-width: 1190px);
+@import url("media2.css") (max-width: 1189px);
