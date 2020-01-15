@@ -142,41 +142,50 @@ def add_new_task_type(request):
 def edit_task(request):
     id = int(request.GET['id'])
 
-    if request.method == 'POST':
-        form = NewTaskForm(request.POST)
-        # print(form)
-        if form.is_valid():
-            # task = form.save()
-            data = Task.objects.filter(id=id)[0]
-            # print(form.cleaned_data)
-            data.user_detail = form.cleaned_data['user_detail']
-            data.task_type = form.cleaned_data['task_type']
-            data.task_description = form.cleaned_data['task_description']
-            data.task_status = form.cleaned_data['task_status']
-            data.start_time = form.cleaned_data['start_time']
-            data.end_time = form.cleaned_data['end_time']
-            data.save()
-            return redirect('/todo/account/')
-            messages.success(request, 'Task edited Succesfully')
-        else:
-            messages.error(request, "Something went wrong. please try again")
+    data = Task.objects.filter(id=id)
+    if len(data)!=0:
+        data = data[0]
+        if data.user_detail_id == request.user.id:
+            if request.method == 'POST':
+                form = NewTaskForm(request.POST)
+                # print(form)
+                if form.is_valid():
+                    # task = form.save()
+                    # data = Task.objects.filter(id=id)[0]
+                    # print(form.cleaned_data)
+                    data.user_detail = form.cleaned_data['user_detail']
+                    data.task_type = form.cleaned_data['task_type']
+                    data.task_description = form.cleaned_data['task_description']
+                    data.task_status = form.cleaned_data['task_status']
+                    data.start_time = form.cleaned_data['start_time']
+                    data.end_time = form.cleaned_data['end_time']
+                    data.save()
+                    return redirect('/todo/account/')
+                    messages.success(request, 'Task edited Succesfully')
+                else:
+                    messages.error(request, "Something went wrong. please try again")
 
-    data = Task.objects.filter(id=id)[0]
-    task_data = {
-        'user_detail' : data.user_detail,
-        'task_type' : data.task_type,
-        'task_description': data.task_description,
-        'task_status': data.task_status,
-        'start_time': data.start_time,
-        'end_time': data.end_time
-    }
-    form = NewTaskForm(initial = task_data)
-    return render(
+            
+            task_data = {
+                'user_detail' : data.user_detail,
+                'task_type' : data.task_type,
+                'task_description': data.task_description,
+                'task_status': data.task_status,
+                'start_time': data.start_time,
+                'end_time': data.end_time
+            }
+            form = NewTaskForm(initial = task_data)
+            return render(
+                request=request,
+                template_name='todo/edition.html',
+                context={
+                    'form': form,
+                }
+            )
+    return render (
         request=request,
-        template_name='todo/edition.html',
-        context={
-            'form': form,
-        }
+        template_name="todo/user_not_found.html",
+        context={}
     )
 
 def delete_task(request):
