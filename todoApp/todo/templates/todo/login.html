@@ -1,6 +1,6 @@
 {% extends 'todo/header.html' %}
 
-{% comment %} {% load crispy_forms_tags %} {% endcomment %}
+{% load crispy_forms_tags %}
 
 
 {% block title %}
@@ -12,8 +12,9 @@
 <div class='card mx-auto' style="width: 80%; border: 1px solid black; padding: 10px; margin: 10px;">
     <form class='form-group' method="POST" novalidate>
         {% csrf_token %}
-        {{ form }}
-        <button type="submit" class="btn btn-success">login</button>
+        {% comment %} {{ form.as_table }} {% endcomment %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-success mt-3">login</button>
     </form>
     If you already have an account <a href="/todo/register" target="blank">register</a> instead.
 </div>

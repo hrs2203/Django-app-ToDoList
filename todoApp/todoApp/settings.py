@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # others
     # 'tinymce',
-    # 'crispy_forms',
+    'crispy_forms',
     'todo',
     'sendMail',
     'mainApp',

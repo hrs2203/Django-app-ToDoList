@@ -89,41 +89,53 @@ def account_details(request):
     )
 
 def add_new_task(request):
-    if request.method=='POST':
-        form = NewTaskForm(request.POST)
-        if form.is_valid():
-            task = form.save()
-            return redirect('/todo/account/')
-            messages.success(request , 'Task added Succesfully')
-        else:
-            messages.error(request , "Something went wrong. please try again")
+    if request.user.is_authenticated:
+        if request.method=='POST':
+            form = NewTaskForm(request.POST)
+            if form.is_valid():
+                task = form.save()
+                return redirect('/todo/account/')
+                messages.success(request , 'Task added Succesfully')
+            else:
+                messages.error(request , "Something went wrong. please try again")
 
-    form = NewTaskForm
-    return render(
+        form = NewTaskForm
+        return render(
+            request = request,
+            template_name = 'todo/edition.html',
+            context={
+                'form' : form,
+            }
+        )
+    return render (
         request = request,
-        template_name = 'todo/edition.html',
-        context={
-            'form' : form,
-        }
+        template_name= "todo/user_not_found.html",
+        context= {}
     )
 
 def add_new_task_type(request):
-    if request.method=='POST':
-        form = NewTaskTypeForm(request.POST)
-        if form.is_valid():
-            task = form.save()
-            return redirect('/todo/account/')
-            messages.success(request , 'Task Type added Succesfully')
-        else:
-            messages.error(request , "Something went wrong. please try again")
+    if request.user.is_authenticated:
+        if request.method=='POST':
+            form = NewTaskTypeForm(request.POST)
+            if form.is_valid():
+                task = form.save()
+                return redirect('/todo/account/')
+                messages.success(request , 'Task Type added Succesfully')
+            else:
+                messages.error(request , "Something went wrong. please try again")
 
-    form = NewTaskTypeForm()
-    return render(
-        request = request,
-        template_name = 'todo/edition.html',
-        context={
-            'form' : form,
-        }
+        form = NewTaskTypeForm()
+        return render(
+            request = request,
+            template_name = 'todo/edition.html',
+            context={
+                'form' : form,
+            }
+        )
+    return render (
+        request=request,
+        template_name="todo/user_not_found.html",
+        context={}
     )
 
 
