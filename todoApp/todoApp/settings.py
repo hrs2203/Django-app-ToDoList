@@ -39,13 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # others
     # 'tinymce',
-    'crispy_forms',
+    # 'crispy_forms',
     'todo',
     'sendMail',
     'mainApp',
 ]
 
-# CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # TINYMCE_DEFAULT_CONFIG = {
 #     'height': 360,
