@@ -119,8 +119,8 @@ def add_new_task_type(request):
             form = NewTaskTypeForm(request.POST)
             if form.is_valid():
                 task = form.save()
+                messages.success(request, 'Task Type added Succesfully')
                 return redirect('/todo/account/')
-                messages.success(request , 'Task Type added Succesfully')
             else:
                 messages.error(request , "Something went wrong. please try again")
 
