@@ -99,7 +99,7 @@ def add_new_task(request):
             else:
                 messages.error(request , "Something went wrong. please try again")
 
-        form = NewTaskForm
+        form = NewTaskForm(initial = {'user_detail': request.user})
         return render(
             request = request,
             template_name = 'todo/edition.html',
@@ -170,7 +170,7 @@ def edit_task(request):
         'start_time': data.start_time,
         'end_time': data.end_time
     }
-    form = NewTaskForm(task_data)
+    form = NewTaskForm(initial = task_data)
     return render(
         request=request,
         template_name='todo/edition.html',
