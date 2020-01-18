@@ -5,7 +5,13 @@
 {% endblock title %}
 
 {% block content %}
-    <div class='card mx-auto m-2 p-2'>
-        <h1 class="align-self-center">User not authenticated</h1>
-    </div>
+    <div class="row m-2">
+            <div class="col align-self-center m-2">
+                <h1> User Not Authenticated </h1>            
+            </div>
+            <div class="col">
+                {% load static %}
+                <img src="{% static 'images/about-us.png'%}" class="mr-5" style="float:right ;width:150px; height:150px">
+            </div>
+        </div>
 {% endblock content %}  

@@ -11,7 +11,7 @@ from todo.models import Task, TaskType
 
 def homepage(request):
     tasks = Task.objects.all()
-    tasks = tasks[:12]
+    tasks = tasks[:6]
     return render(
         request = request,
         template_name = 'todo/homepage.html',

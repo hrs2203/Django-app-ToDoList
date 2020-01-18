@@ -42,7 +42,7 @@
         </section>
 
         {% comment %} skill set {% endcomment %}
-
+        <hr>
         <section class='skill-set mb-5 mt-5'>
             
             <div class='container text-center mb-5 main_title'>
@@ -75,6 +75,12 @@
                             <img src="{% static 'images/java_scr_logo.png' %}" alt="java_scr_logo.png" class="img-fluid hov_sha p-3 mb-5 bg-white rounded">
                         </a>
                     </div>
+                    <div class="col-sm align-self-center">
+                        <a href="https://www.mongodb.com/">
+                            {% load static %}
+                            <img src="{% static 'images/mongo_logo.png' %}" alt="mongo_logo.png" class="img-fluid hov_sha p-3 mb-5 bg-white rounded">
+                        </a>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-sm align-self-center">
@@ -101,20 +107,16 @@
                             <img src="{% static 'images/react_logo.png' %}" alt="react_logo.png" class="img-fluid hov_sha p-3 mb-5 bg-white rounded">
                         </a>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm align-self-center">
-                        <a href="https://www.mongodb.com/">
-                            {% load static %}
-                            <img src="{% static 'images/mongo_logo.png' %}" alt="mongo_logo.png" class="img-fluid hov_sha p-3 mb-5 bg-white rounded">
-                        </a>
-                    </div>
                     <div class="col-sm align-self-center">
                         <a href="https://www.mysql.com/">
                             {% load static %}
                             <img src="{% static 'images/mysql_logo.png' %}" alt="mysql_logo.png" class="img-fluid hov_sha p-3 mb-5 bg-white rounded">
                         </a>
                     </div>
+                </div>
+                <div class="row">
+                    
+                    
                     <div class="col-sm align-self-center">
                         <!-- empty for now -->
                     </div>
@@ -125,55 +127,68 @@
             </div>
         </section>
 
+        <hr>
         {% comment %} personal project {% endcomment %}
         <section class="proj md-5 mb-5">
             <div class='container text-center'>
                 <h1 class='align-self-center m-5'>Project</h1>
             </div>
-            <div class="row m-3 hov_sha m-2 p-2 align-self-center">
-                {% comment %} <div class="col-sm hov_sha m-2 p-2 align-self-center"> {% endcomment %}
+            <div class="row m-3 m-2 p-2 align-self-center">
+                <div class="col-sm hov_sha m-2 p-2 align-self-center">
                     <a href="https://github.com/hrs2203/GraphER">
                         <div class="row">
-                            <div class="col-sm align-self-center">
-                                {% load static %}
-                                <img src="{% static 'images/python_logo.png' %}" alt="python_logo.png" class="img-fluid align-self-center">
-                            </div>
+                            {% comment %} <div class="col-sm align-self-center text-center"> {% endcomment %}
+                                {% comment %} {% load static %} {% endcomment %}
+                                {% comment %} <img src="{% static 'images/python_logo.png' %}" alt="python_logo.png" class="img-fluid align-self-center"> {% endcomment %}
+                            {% comment %} </div> {% endcomment %}
                             <div class="col-sm align-self-center text-justify">
                                 Python2 Based Graph Drawing Application that draws high quality graph using Tkinter Library
                             </div>
                         </div>
                     </a>
-                {% comment %} </div> {% endcomment %}
-            </div>
-            <div class="row m-3 hov_sha m-2 p-2 align-self-center">
-                {% comment %} <div class="col-sm hov_sha m-2 p-2 align-self-center"> {% endcomment %}
+                </div>
+            {% comment %} </div> {% endcomment %}
+            {% comment %} <div class="row m-3 hov_sha m-2 p-2 align-self-center"> {% endcomment %}
+                <div class="col-sm hov_sha m-2 p-2 align-self-center">
                     <a href="https://github.com/hrs2203/Techfesia2019/tree/backend-email-utils">
                         <div class="row">
-                            <div class="col-sm align-self-center text-justify">
-                                {% load static %}
-                                <img src="{% static 'images/django_logo.png' %}" alt="django_logo.png" class="img-fluid align-self-center">
-                            </div>
+                            {% comment %} <div class="col-sm align-self-center text-center"> {% endcomment %}
+                                {% comment %} {% load static %} {% endcomment %}
+                                {% comment %} <img src="{% static 'images/django_logo.png' %}" alt="django_logo.png" class="img-fluid align-self-center"> {% endcomment %}
+                            {% comment %} </div> {% endcomment %}
                             <div class="col-sm align-self-center">
                                 Django Rest based web application, for the college annual tech festival Techfesia
                             </div>
                         </div>
                     </a>
-                {% comment %} </div> {% endcomment %}
+                </div>
             </div>
-            <div class="row m-3 hov_sha m-2 p-2 align-self-center">
-                {% comment %} <div class="col-sm hov_sha m-2 p-2 align-self-center"> {% endcomment %}
+            <div class="row m-3 p-2 align-self-center">
+                <div class="col-sm hov_sha m-2 p-2 align-self-center">
                     <a href="http://hrs2203.pythonanywhere.com/todo/">
                         <div class="row">
-                            <div class="col-sm align-self-center text-justify">
-                                {% load static %}
-                                <img src="{% static 'images/django_logo.png' %}" alt="django_logo.png" class="img-fluid align-self-center">
-                            </div>
+                            {% comment %} <div class="col-sm align-self-center text-center"> {% endcomment %}
+                                {% comment %} {% load static %} {% endcomment %}
+                                {% comment %} <img src="{% static 'images/django_logo.png' %}" alt="django_logo.png" class="img-fluid align-self-center"> {% endcomment %}
+                            {% comment %} </div> {% endcomment %}
                             <div class='col-sm align-self-center'>
                                 Django based To do Application. User interface for people to store and get there tasks done. (still in progress)
                             </div>
                         </div>
                     </a>
-                {% comment %} </div> {% endcomment %}
+                </div>
+                <div class="col-sm hov_sha m-2 p-2 align-self-center">
+                    <a href="http://hrs2203.pythonanywhere.com/todo/">
+                        <div class="row">
+                            {% comment %} <div class="col-sm align-self-center text-center"> {% endcomment %}
+                                {% comment %} {% load static %} {% endcomment %}
+                                {% comment %} <img src="{% static 'images/django_logo.png' %}" alt="django_logo.png" class="img-fluid align-self-center"> {% endcomment %}
+                            {% comment %} </div> {% endcomment %}
+                            <div class='col-sm align-self-center'>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
         </section>
 

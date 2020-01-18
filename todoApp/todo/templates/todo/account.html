@@ -11,8 +11,15 @@
 
 {% block content %}
     {% if user.is_authenticated %}
-        <br>
-        <h1> Hello {{ user.username }}. these are your tasks below </h1>
+        <div class="row m-2">
+            <div class="col align-self-center m-2">
+                <h1> Hello {{ user.username }}. these are your tasks below </h1>
+            </div>
+            <div class="col">
+                {% load static %}
+                <img src="{% static 'images/banner-image.png'%}" class="mr-5" style="float:right ;width:150px; height:150px">
+            </div>
+        </div>
         <hr>
         {% if tasks|length != 0 %}
             <h3 class="text-center"> List of all Due Task </h3>
@@ -88,7 +95,16 @@
             <a href='/todo/add_task_type/'><button class='btn btn-outline-success' type="button"> Add new Task type </button></a>
         {% endif %}
     {% else %}
-        <h1> Please login to continue </h1>
+        
+        <div class="row m-2">
+            <div class="col align-self-center m-2">
+                <h1> Please login to continue </h1>            
+            </div>
+            <div class="col">
+                {% load static %}
+                <img src="{% static 'images/about-us.png'%}" class="mr-5" style="float:right ;width:150px; height:150px">
+            </div>
+        </div>
     {% endif %}
 {% endblock content %}
     
