@@ -130,8 +130,8 @@
             <div class='container text-center'>
                 <h1 class='align-self-center m-5'>Project</h1>
             </div>
-            <div class="row m-3">
-                <div class="col-sm hov_sha m-2 p-2 align-self-center">
+            <div class="row m-3 hov_sha m-2 p-2 align-self-center">
+                {% comment %} <div class="col-sm hov_sha m-2 p-2 align-self-center"> {% endcomment %}
                     <a href="https://github.com/hrs2203/GraphER">
                         <div class="row">
                             <div class="col-sm align-self-center">
@@ -143,8 +143,10 @@
                             </div>
                         </div>
                     </a>
-                </div>
-                <div class="col-sm hov_sha m-2 p-2 align-self-center">
+                {% comment %} </div> {% endcomment %}
+            </div>
+            <div class="row m-3 hov_sha m-2 p-2 align-self-center">
+                {% comment %} <div class="col-sm hov_sha m-2 p-2 align-self-center"> {% endcomment %}
                     <a href="https://github.com/hrs2203/Techfesia2019/tree/backend-email-utils">
                         <div class="row">
                             <div class="col-sm align-self-center text-justify">
@@ -156,29 +158,23 @@
                             </div>
                         </div>
                     </a>
-                </div>
+                {% comment %} </div> {% endcomment %}
             </div>
-            <div class="row m-3">
-                <div class="col-sm hov_sha m-2 p-2 align-self-center">
+            <div class="row m-3 hov_sha m-2 p-2 align-self-center">
+                {% comment %} <div class="col-sm hov_sha m-2 p-2 align-self-center"> {% endcomment %}
                     <a href="http://hrs2203.pythonanywhere.com/todo/">
                         <div class="row">
-                            <div class="col-sm align-self-center">
+                            <div class="col-sm align-self-center text-justify">
                                 {% load static %}
                                 <img src="{% static 'images/django_logo.png' %}" alt="django_logo.png" class="img-fluid align-self-center">
                             </div>
-                            <div class='col-sm align-self-center text-justify'>
-                                Django based To do Application
+                            <div class='col-sm align-self-center'>
+                                Django based To do Application. User interface for people to store and get there tasks done. (still in progress)
                             </div>
                         </div>
                     </a>
-                </div>
-                <div class="col-sm hov_sha m-2 p-2 align-self-center">
-                    <!-- empty for now -->
-                </div>
+                {% comment %} </div> {% endcomment %}
             </div>
-            
-        </div>
-
         </section>
 
     </div>

@@ -1,6 +1,5 @@
-@import url("media1.css") (min-width: 1190px);
-@import url("media2.css") (max-width: 1189px);
-
+@import url("mainApp_media1.css") (min-width: 1190px);
+@import url("mainApp_media2.css") (max-width: 1189px);
 header {
     margin-top: 0px;
     margin-bottom: 10px;
