@@ -22,3 +22,6 @@ class Task(models.Model):
     def __str__(self):
         return self.task_description[:10] + "..."
     
+    def getShort(self):
+        return self.task_description[:10] + "..." + " from " + str(self.start_time.date()) + " to " + str(self.end_time.date())
+    

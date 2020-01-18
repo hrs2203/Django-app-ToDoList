@@ -6,17 +6,43 @@
 
 {% block content %}
     {% if user.is_authenticated %}
-        <h1> hello {{ user.username }} </h1>
-        <p><a href="/todo/account/">Click to see your home page</a></p>
+        <div class="row">
+            <div class="col align-self-center m-2">
+                <h1> hello {{ user.username }} </h1>
+                <p><a href="/todo/account/">Click to see your home page</a></p>
+            </div>
+            <div class="col">
+                {% load static %}
+                <img src="{% static 'images/banner-image.png'%}" class="mr-5" style="float:right ;width:150px; height:150px">
+            </div>
+        </div>
     {% else %}
         <h1> Homepage loaded succesfully </h1>
         <h2> Please <a href='/todo/login/'>login</a> to continue </h2>
     {% endif %}
-    <br>
-    <div class='border-top border-bottom border-success p-3'>
+    <div class='mt-2 border-bottom border-success p-3'>
+        <h2 class="mb-3">List of some of the Tasks of our user</h2>
+        {% for item in tasks %}
+            <div class="card mt-1 mb-1">
+                <div class="card-body text-justify">
+                    {{ item.user_detail }} 
+                    
+                    {% if item.task_status %}
+                        has completed
+                    {% else %}
+                        is working on
+                    {% endif %}
+                    
+                    {{ item.getShort }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class='mt-2 border-bottom border-success p-3'>
         <h2> About this Page </h2>
         <p>This section of the webSite is a demo project where I create a Django based todo app. This application helped me in the whole learning process while building a product. This part is still under development :) and I am trying to complete it ASAP, So please bear with me on this one. Thank you
         </p>
     </div>
+    
 
 {% endblock %}
