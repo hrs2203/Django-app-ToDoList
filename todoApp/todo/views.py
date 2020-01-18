@@ -62,7 +62,7 @@ def register_request(request):
         else:
             messages.error(request, "Something went wrong. Invalid username or password.")
             
-    form = UserCreationForm
+    form = UserCreationForm()
     return render(
         request = request,
         template_name = 'todo/registration.html',
@@ -72,7 +72,7 @@ def register_request(request):
     )
 
 def account_details(request):
-    username = None
+    # username = None
     tasks = []
     task_title = TaskType.objects.all()
     if request.user.is_authenticated:
@@ -93,7 +93,8 @@ def add_new_task(request):
         if request.method=='POST':
             form = NewTaskForm(request.POST)
             if form.is_valid():
-                task = form.save()
+                form.instance.user_detail_id = request.user.id
+                form.save()
                 return redirect('/todo/account/')
                 messages.success(request , 'Task added Succesfully')
             else:
@@ -118,7 +119,7 @@ def add_new_task_type(request):
         if request.method=='POST':
             form = NewTaskTypeForm(request.POST)
             if form.is_valid():
-                task = form.save()
+                form.save()
                 messages.success(request, 'Task Type added Succesfully')
                 return redirect('/todo/account/')
             else:
@@ -148,20 +149,16 @@ def edit_task(request):
         if data.user_detail_id == request.user.id:
             if request.method == 'POST':
                 form = NewTaskForm(request.POST)
-                # print(form)
                 if form.is_valid():
-                    # task = form.save()
-                    # data = Task.objects.filter(id=id)[0]
-                    # print(form.cleaned_data)
-                    data.user_detail = form.cleaned_data['user_detail']
+                    data.user_detail = request.user
                     data.task_type = form.cleaned_data['task_type']
                     data.task_description = form.cleaned_data['task_description']
                     data.task_status = form.cleaned_data['task_status']
                     data.start_time = form.cleaned_data['start_time']
                     data.end_time = form.cleaned_data['end_time']
                     data.save()
-                    return redirect('/todo/account/')
                     messages.success(request, 'Task edited Succesfully')
+                    return redirect('/todo/account/')
                 else:
                     messages.error(request, "Something went wrong. please try again")
 

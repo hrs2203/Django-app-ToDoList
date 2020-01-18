@@ -10,8 +10,10 @@
 <br>
 <div class='card mx-auto' style="width: 80%; border: 1px solid black; padding: 10px; margin: 10px;">
     <form class='form-group' method="POST" novalidate>
-        {% csrf_token %}
-        {{ form.as_table }}
+        <table>
+            {% csrf_token %}
+            {{ form.as_table }}
+        </table>
         <button type="submit" class="btn btn-success mt-3">login</button>
     </form>
     If you already have an account <a href="/todo/register" target="blank">register</a> instead.

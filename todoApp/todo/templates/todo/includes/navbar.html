@@ -5,8 +5,8 @@
             <li class="nav-item"><a class="nav-link" href="/todo/"><button class='btn btn-outline-primary'>Home Todo</button></a></li>
 
             {% if user.is_authenticated %}
-                <li class="nav-item"><a class="nav-link" href="/todo/add_task/"><button class='btn btn-outline-primary'>task</button></a></li>
-                <li class="nav-item"><a class="nav-link" href="/todo/add_task_type/"><button class='btn btn-outline-primary'>task type</button></a></li>
+                <li class="nav-item"><a class="nav-link" href="/todo/add_task/"><button class='btn btn-outline-primary'>add task</button></a></li>
+                <li class="nav-item"><a class="nav-link" href="/todo/add_task_type/"><button class='btn btn-outline-primary'>add task type</button></a></li>
                 <li class="nav-item"><a class="nav-link" href="/todo/account"><button class='btn btn-outline-primary'>{{user.username}}</button></a></li>
                 <li class="nav-item"><a class="nav-link" href="/todo/logout"><button class='btn btn-outline-primary'>logout</button></a></li>
 
