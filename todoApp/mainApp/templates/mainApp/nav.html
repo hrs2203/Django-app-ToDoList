@@ -1,12 +1,31 @@
-<nav class="navbar navbar-expand-lg navbar-light align-self-right">
-    <div class="collapse navbar-collapse" id="navbarNav">
+<div id="mySidenav" class="sidenav">
+{% comment %} <nav class="navbar navbar-expand-lg navbar-light align-self-right"> {% endcomment %}
+    {% comment %} <div class="collapse navbar-collapse" id="navbarNav"> {% endcomment %}
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <ul class="navbar-nav nav-pills justify-content-end" >
-            <li class="nav-item float-right"><a class="nav-link" href='/todo'><button class='btn btn-outline-success'> ToDo list </button> </a></li>
-            <li class="nav-item float-right"><a class="nav-link" href='https://github.com/hrs2203'><button class='btn btn-outline-success'> <span class='fa fa-github'></span> Github </button> </a></li>
-            <li class="nav-item float-right"><a class="nav-link" href='https://www.linkedin.com/in/hrishabh-pandey-052a0616b/'><button class='btn btn-outline-success'> <span class='fa fa-linkedin'></span> Linkedin </button> </a></li>
+            <li class="ml-5 nav-item float-right"><a class="nav-link" href='/todo'><button class='btn btn-outline-success'> ToDo list </button> </a></li>
+            <li class="ml-5 nav-item float-right"><a class="nav-link" href='https://github.com/hrs2203'><button class='btn btn-outline-success'> <span class='fa fa-github'></span> Github </button> </a></li>
+            <li class="ml-5 nav-item float-right"><a class="nav-link" href='https://www.linkedin.com/in/hrishabh-pandey-052a0616b/'><button class='btn btn-outline-success'> <span class='fa fa-linkedin'></span> Linkedin </button> </a></li>
         </ul>
-    </div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-</nav>
+    {% comment %} </div> {% endcomment %}
+
+    {% comment %} <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> {% endcomment %}
+    
+
+{% comment %} </nav> {% endcomment %}
+</div>
+    <nav class="navbar navbar-expand-lg navbar-light align-self-right">
+        <button class="btn btn-outline-success" onclick="openNav()">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+</script>

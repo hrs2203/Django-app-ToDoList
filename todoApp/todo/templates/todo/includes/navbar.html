@@ -1,24 +1,38 @@
-<nav class="navbar navbar-expand-lg navbar-light align-self-right">
-    <div class="collapse navbar-collapse" id="navbarNav">
+<div id="mySidenav" class="sidenav">
+{% comment %} <nav class="navbar navbar-expand-lg navbar-light align-self-right"> {% endcomment %}
+    {% comment %} <div class="collapse navbar-collapse" id="navbarNav"> {% endcomment %}
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <ul class="navbar-nav nav-pills justify-content-end" >
-            <li class="nav-item"><a class="nav-link" href="/"><button class='btn btn-outline-primary'>MainHomePage</button></a></li>
-            <li class="nav-item"><a class="nav-link" href="/todo/"><button class='btn btn-outline-primary'>Home Todo</button></a></li>
+            <li class="ml-5 nav-item"><a class="nav-link" href="/"><button class='btn btn-outline-primary'>MainHomePage</button></a></li>
+            <li class="ml-5 nav-item"><a class="nav-link" href="/todo/"><button class='btn btn-outline-primary'>Home Todo</button></a></li>
 
             {% if user.is_authenticated %}
-                <li class="nav-item"><a class="nav-link" href="/todo/add_task/"><button class='btn btn-outline-primary'>add task</button></a></li>
-                <li class="nav-item"><a class="nav-link" href="/todo/add_task_type/"><button class='btn btn-outline-primary'>add task type</button></a></li>
-                <li class="nav-item"><a class="nav-link" href="/todo/account"><button class='btn btn-outline-primary'>{{user.username}}</button></a></li>
-                <li class="nav-item"><a class="nav-link" href="/todo/logout"><button class='btn btn-outline-primary'>logout</button></a></li>
+                <li class="ml-5 nav-item"><a class="nav-link" href="/todo/add_task/"><button class='btn btn-outline-primary'>add task</button></a></li>
+                <li class="ml-5 nav-item"><a class="nav-link" href="/todo/add_task_type/"><button class='btn btn-outline-primary'>add task type</button></a></li>
+                <li class="ml-5 nav-item"><a class="nav-link" href="/todo/account"><button class='btn btn-outline-primary'>{{user.username}}</button></a></li>
+                <li class="ml-5 nav-item"><a class="nav-link" href="/todo/logout"><button class='btn btn-outline-primary'>logout</button></a></li>
 
             {% else %}
-                <li class="nav-item"><a class="nav-link" href="/todo/login"><button class='btn btn-outline-primary'>login</button></a></li>
-                <li class="nav-item"><a class="nav-link" href="/todo/register"><button class='btn btn-outline-primary'>register</button></a></li>
-                <li class="nav-item"><a class="nav-link" href='https://github.com/hrs2203'><button class='btn btn-outline-primary'> <span class='fa fa-github'></span> Github </button> </a></li>
-                <li class="nav-item"><a class="nav-link" href='https://www.linkedin.com/in/hrishabh-pandey-052a0616b/'><button class='btn btn-outline-primary'> <span class='fa fa-linkedin'></span> Linkedin </button> </a></li>
+                <li class="ml-5 nav-item"><a class="nav-link" href="/todo/login"><button class='btn btn-outline-primary'>login</button></a></li>
+                <li class="ml-5 nav-item"><a class="nav-link" href="/todo/register"><button class='btn btn-outline-primary'>register</button></a></li>
+                <li class="ml-5 nav-item"><a class="nav-link" href='https://github.com/hrs2203'><button class='btn btn-outline-primary'> <span class='fa fa-github'></span> Github </button> </a></li>
+                <li class="ml-5 nav-item"><a class="nav-link" href='https://www.linkedin.com/in/hrishabh-pandey-052a0616b/'><button class='btn btn-outline-primary'> <span class='fa fa-linkedin'></span> Linkedin </button> </a></li>
             {% endif %}
         </ul>
-    </div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light align-self-right">
+    <button class="btn btn-outline-success" onclick="openNav()">
         <span class="navbar-toggler-icon"></span>
     </button>
 </nav>
+
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+</script>
