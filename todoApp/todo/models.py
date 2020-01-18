@@ -1,11 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
-from datetime import datetime , timedelta
-from tinymce import HTMLField
+
 
 class TaskType(models.Model):
     task_type = models.CharField(max_length=50)
     task_type_description = models.TextField()
+
 
 class Task(models.Model):
     user_detail = models.ForeignKey( User , on_delete=models.CASCADE)
