@@ -29,11 +29,7 @@
                     <div class="card mx-auto m-4" style="width:80%">
                         <div class="card-body">
                             <h4 class="card-title">
-                                {% for i in task_type %}
-                                    {% if i.id == task.task_type_id %}
-                                        {{ i.task_type }}
-                                    {% endif %}
-                                {% endfor %}
+                                {{ task.task_type }}
                             </h4>
                             <hr>
                             <div class="card-text">
@@ -62,11 +58,7 @@
                     <div class="card mx-auto m-4" style="width:80%">
                         <div class="card-body">
                             <h4 class="card-title">
-                                {% for i in task_type %}
-                                    {% if i.id == task.task_type_id %}
-                                        {{ i.task_type }}
-                                    {% endif %}
-                                {% endfor %}
+                                {{ task.task_type }}
                             </h4>
                             <hr>
                             <div class="card-text">
