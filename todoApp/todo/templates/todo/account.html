@@ -33,14 +33,22 @@
                             </h4>
                             <hr>
                             <div class="card-text">
+                                <p>{{ task.task_description }}</p>
+
                                 <small>start: {{ task.start_time }}</small><br>
                                 <small>end: {{ task.end_time }}</small><br>
-                                <p>{{ task.task_description }}</p>
                                 <p>status : due</p>
                                 <div class="row">
                                     <a class="col text-center" href="/todo/edit_task/?id={{ task.id }}"><button style="width: 100%" class='btn btn-outline-success' type="button">
-                                        edit response
+                                        edit Details
                                     </button></a>
+                                    
+                                    <a class="col text-center" href="/todo/change_status/?id={{ task.id }}"><button style="width: 100%" class='btn btn-outline-success' type="button">
+                                        Change Status
+                                    </button></a>
+                                    <!-- <a class="col text-center" href="/todo/send_mail/?id={{ task.id }}"><button style="width: 100%" class='btn btn-outline-success' type="button">
+                                        Send Mail
+                                    </button></a> -->
                                     <a class="col text-center" href="/todo/delete_task/?id={{ task.id }}"><button style="width: 100%" class='btn btn-outline-danger' type="button">
                                         delete
                                     </button></a>
@@ -61,15 +69,22 @@
                                 {{ task.task_type }}
                             </h4>
                             <hr>
-                            <div class="card-text">
+                            <div class="card-text">                                
+                                <p>{{ task.task_description }}</p>
                                 <small>start: {{ task.start_time }}</small><br>
                                 <small>end: {{ task.end_time }}</small><br>
-                                <p>{{ task.task_description }}</p>
                                 <p>status : done</p>
                                 <div class="row">
                                     <a class="col text-center" href="/todo/edit_task/?id={{ task.id }}"><button style="width: 100%" class='btn btn-outline-success' type="button">
-                                        edit response
+                                        edit Details
                                     </button></a>
+                                    
+                                    <a class="col text-center" href="/todo/change_status/?id={{ task.id }}"><button style="width: 100%" class='btn btn-outline-success' type="button">
+                                        Change Status
+                                    </button></a>
+                                    <!-- <a class="col text-center" href="/todo/send_mail/?id={{ task.id }}"><button style="width: 100%" class='btn btn-outline-success' type="button">
+                                        Send Mail
+                                    </button></a> -->
                                     <a class="col text-center" href="/todo/delete_task/?id={{ task.id }}"><button style="width: 100%" class='btn btn-outline-danger' type="button">
                                         delete
                                     </button></a>

@@ -90,6 +90,29 @@ def account_details(request):
         }
     )
 
+def send_mail(request):
+    if request.user.is_authenticated:
+        return redirect("/todo/account")
+    return render(
+        request=request,
+        template_name="todo/user_not_found.html",
+        context={}
+    )
+
+def change_status(request):
+    if request.user.is_authenticated:
+        data = Task.objects.filter(id=int(request.GET['id']))[0]
+        data.task_status = not data.task_status
+        data.save()
+        return redirect("/todo/account")
+
+    return render(
+        request=request,
+        template_name="todo/user_not_found.html",
+        context={}
+    )
+
+
 def add_new_task(request):
     if request.user.is_authenticated:
         if request.method=='POST':
